@@ -1,8 +1,8 @@
 from gturtle import *
 
 def arriere_plan(base,hauteur_1,hauteur_2, couleur_1, couleur_2) :
-    penDown()
     hideTurtle()
+    penDown()
     setPos(- (base / 2 - hauteur_1 / 2),- hauteur_1 / 2)
     setHeading(90)
     setPenColor(couleur_1)

@@ -8,6 +8,7 @@ def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
     hideTurtle()
 
     def toit(couleur_toit, largeur):
+        penDown()
         right(90)
         setFillColor(couleur_toit)
         startPath()
@@ -16,11 +17,13 @@ def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
             left(120)
         left(90)
         fillPath()
+        penUp()
 
     def pan(couleur_pan, largeur):
         angle = 360 / 12
         setFillColor(couleur_pan)
         startPath()
+        penDown()
         for _ in range(4):
             right(angle)
             forward(largeur * 1.5)
@@ -30,10 +33,13 @@ def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
             forward(largeur * 1.5)
             left(180 - angle)
         fillPath()
+        penUp()
 
     def fenetre(couleur_fenetre, largeur):
+        penDown()
         setPenColor(couleur_fenetre)
         dot(largeur / 2)
+        penUp()
 
     def batiment(couleur_bat, largeur):
         gamma = atan(0.3 * largeur / (2.5 * largeur))
@@ -54,12 +60,15 @@ def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
     def porte(couleur_porte, largeur):
         setFillColor(couleur_porte)
         startPath()
+        penDown()
         for _ in range(2):
             forward(largeur)
             right(90)
             forward(largeur * 0.5)
             right(90)
         fillPath()
+        penUp()
+
     gamma = atan(0.3 * largeur / (2.5 * largeur))
     alpha = degrees(gamma)
     longueur = sqrt((0.3 * largeur) ** 2 + (2.5 * largeur) ** 2)
@@ -71,7 +80,7 @@ def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
     toit(couleur_toit, largeur)
     batiment(couleur_bat, largeur)
     right(180)
-    penUp()
+    
     forward(largeur / 2)
     left(90)
     forward(hauteura)
@@ -81,7 +90,7 @@ def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
     setHeading(angle)
     pan(couleur_pan, largeur)
     setHeading(0)
-    penUp()
+    
     back(hauteura + largeur / 2)
     back(hauteurb - largeur / 2)
     left(90)

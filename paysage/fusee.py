@@ -76,6 +76,7 @@ def fusee(taille, couleur_base, couleur_aile, rapport_feu, couleur_feu):
         back(longueur)
         setPenWidth(1)
         setPenColor('black')
+        penUp()
     right(180)
     feu(taille, longueur_feu, couleur_feu)
     right(90)

@@ -69,6 +69,7 @@ def fusee(taille, couleur_base, couleur_aile, rapport_feu, couleur_feu):
         dot(diametre)
 
     def feu(largeur, longueur, couleur):
+        penDown()
         setPenColor(couleur)
         setPenWidth(taille)
         forward(longueur)
@@ -123,4 +124,4 @@ def fusee(taille, couleur_base, couleur_aile, rapport_feu, couleur_feu):
 
 
 if __name__ == '__main__':
-    fusee(50, 125, 'blue', 1, 'orange')
+    fusee(50, 'grey', 'blue', 1, 'orange')

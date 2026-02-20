@@ -34,72 +34,83 @@ def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
             left(180 - angle)
         fillPath()
         penUp()
+        
 
-    def fenetre(couleur_fenetre, largeur):
+    def fenetre(couleur_fenetre, diametre):
         penDown()
         setPenColor(couleur_fenetre)
-        dot(largeur / 2)
+        dot(diametre)
+        setPenColor("black")
         penUp()
 
     def batiment(couleur_bat, largeur):
-        gamma = atan(0.3 * largeur / (2.5 * largeur))
-        alpha = degrees(gamma)
-        longueur = sqrt((0.3 * largeur) ** 2 + (2.5 * largeur) ** 2)
+        penDown()
         setFillColor(couleur_bat)
         startPath()
-        left(180 - alpha)
-        forward(longueur)
-        left(90 + alpha)
-        forward(largeur * 1.6)
-        left(90 + alpha)
-        forward(longueur)
-        left(90 - alpha)
+        right(90 - alpha)
+        forward(hypo_tri_rec)
+        right(alpha)
+        forward(petite_largeur)
+        right(alpha)
+        forward(hypo_tri_rec)
+        right(180 - alpha)
         forward(largeur)
         fillPath()
+        penUp()
+
+
 
     def porte(couleur_porte, largeur):
         setFillColor(couleur_porte)
         startPath()
         penDown()
+        hauteur = largeur * 2
         for _ in range(2):
-            forward(largeur)
+            forward(hauteur)
             right(90)
-            forward(largeur * 0.5)
+            forward(largeur)
             right(90)
         fillPath()
         penUp()
 
-    gamma = atan(0.3 * largeur / (2.5 * largeur))
-    alpha = degrees(gamma)
-    longueur = sqrt((0.3 * largeur) ** 2 + (2.5 * largeur) ** 2)
-    left(180 - alpha)
-    forward(-longueur)
-    setHeading(0)
-    hauteura = sqrt(largeur ** 2 - (largeur / 2) ** 2) / 2.5
-    hauteurb = sqrt((2.5 * largeur) ** 2 - (0.3 * largeur) ** 2)
-    toit(couleur_toit, largeur)
-    batiment(couleur_bat, largeur)
-    right(180)
-    
-    forward(largeur / 2)
-    left(90)
-    forward(hauteura)
-    back(hauteura + largeur / 2)
-    fenetre(couleur_fenetre, largeur)
-    forward(hauteura + largeur / 2)
-    setHeading(angle)
-    pan(couleur_pan, largeur)
-    setHeading(0)
-    
-    back(hauteura + largeur / 2)
-    back(hauteurb - largeur / 2)
-    left(90)
-    forward(largeur * 0.2)
-    right(90)
-    penDown()
-    porte(couleur_porte, largeur)
 
+    petite_largeur = 0.6 * largeur
+    hauteur = 1.5 * largeur
+    base_tri_rec = (largeur - petite_largeur) / 2
+    alpha = degrees(atan(hauteur / base_tri_rec))
+    hypo_tri_rec = sqrt(base_tri_rec ** 2 + hauteur ** 2)
+    batiment(couleur_bat, largeur)
+
+    #porte
+    largeur_porte = largeur / 3
+    back((largeur - largeur_porte) / 2 )
+    right(90)
+    porte(couleur_porte,largeur_porte)
+    
+    #fenêtre
+    left(90)
+    back(largeur_porte / 2)
+    right(90)
+    forward(hauteur * 3 / 4)
+    fenetre(couleur_fenetre, largeur / 4)
+
+    #toit
+    forward(hauteur * 1 /4)
+    left(90)
+    forward(petite_largeur / 2)
+    right(90)
+    toit(couleur_toit,petite_largeur)
+
+    #helice
+    hauteur_toit = sqrt(petite_largeur ** 2 - (petite_largeur / 2) ** 2)
+    right(90 - 30)
+    forward(2 / 3 * hauteur_toit)
+
+    setHeading(angle)
+    longueur_pan = largeur * 0.8
+    pan(couleur_pan,longueur_pan)
+    
 
 if __name__ == '__main__':
-    moulin(100, 60, 'red', 'grey', 'lightBlue', 'gold', 'brown')
+    moulin(100, 80, 'red', 'grey', 'lightBlue', 'gold', 'brown')
 

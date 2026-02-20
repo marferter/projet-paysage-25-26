@@ -1,7 +1,4 @@
 from gturtle import *
-makeTurtle()
-penWidth(3)
-
 
 def fusee2(taille_base, couleur_primaire, couleur_secondaire,
     couleur_flammes, longueur_flammes):

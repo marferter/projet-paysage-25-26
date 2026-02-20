@@ -1,6 +1,4 @@
 from gturtle import *
-setPenColor('white')
-
 
 def sapin(taille):
     setPenWidth(2)

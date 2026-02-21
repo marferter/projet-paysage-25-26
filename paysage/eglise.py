@@ -87,3 +87,27 @@ def eglise(largeur, couleur_nef, couleur_clocher, couleur_toit, couleur_horloge=
 
 if __name__ == '__main__':
     eglise(120, 'lightGrey', 'grey', 'darkRed')
+
+"""
+eglise(largeur, couleur_nef, couleur_clocher, couleur_toit,
+       couleur_horloge='white')
+
+Dessine une église vue de face, composée d'une nef rectangulaire avec
+son toit triangulaire, d'un clocher surmonté d'une flèche et d'une
+horloge circulaire.
+
+Paramètres :
+    largeur         : largeur totale de l'église (en pixels).
+                      La hauteur de la nef (3/8 de la largeur), la base
+                      de la nef (3/4 de la largeur), la hauteur du clocher
+                      (3/4 de la largeur) et toutes les autres dimensions
+                      en découlent.
+    couleur_nef     : couleur des murs de la nef (corps principal).
+    couleur_clocher : couleur des murs du clocher (tour).
+    couleur_toit    : couleur du toit de la nef et de la flèche du clocher.
+    couleur_horloge : couleur de l'horloge sur le clocher (blanc par défaut).
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la nef, orientée vers le haut (nord).
+"""

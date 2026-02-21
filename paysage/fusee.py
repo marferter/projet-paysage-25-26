@@ -126,3 +126,29 @@ def fusee(taille, couleur_base, couleur_aile, rapport_feu, couleur_feu):
 
 if __name__ == '__main__':
     fusee(50, 'grey', 'blue', 1, 'orange')
+
+"""
+fusee(taille, couleur_base, couleur_aile, rapport_feu, couleur_feu)
+
+Dessine une fusée spatiale vue de côté, composée d'un corps trapézoïdal,
+d'un corps rectangulaire bleu (avec hublot), d'ailerons triangulaires
+et d'un panache de feu à la tuyère.
+
+Paramètres :
+    taille       : unité de taille de base de la fusée (en pixels).
+                   La grande base du trapèze inférieur vaut 4×taille,
+                   le corps rectangulaire fait 2×taille de large et
+                   ~3.33×taille de long. Toutes les dimensions en découlent.
+    couleur_base : couleur principale du corps de la fusée
+                   (trapèzes supérieur et inférieur).
+    couleur_aile : couleur des ailerons/empennages.
+    rapport_feu  : longueur du panache de feu en multiples de taille
+                   (ex. rapport_feu=1 → longueur_feu = 1×taille).
+    couleur_feu  : couleur du panache de feu à la tuyère.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), à la tuyère
+    (bas) de la fusée, orientée vers le haut (nord). Le premier élément
+    dessiné est le panache de feu vers le bas, puis la fusée est construite
+    de bas en haut.
+"""

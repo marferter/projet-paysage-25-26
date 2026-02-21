@@ -100,4 +100,27 @@ def sapin(base_grand_triangle, nb_etages, couleur_sapin, couleur_boules, couleur
 if __name__ == '__main__':
     sapin(100, 3, 'green','red','orange')
 
+"""
+sapin(base_grand_triangle, nb_etages, couleur_sapin, couleur_boules,
+      couleur_etoile)
 
+Dessine un sapin décoré vu de face, composé d'un tronc, de plusieurs
+niveaux de triangles (étages de branches), de boules de décoration et
+d'une étoile au sommet.
+
+Paramètres :
+    base_grand_triangle : largeur de la base du plus grand triangle
+                          (étage inférieur) du sapin (en pixels).
+                          C'est la dimension de référence ; les triangles
+                          des étages supérieurs sont progressivement plus
+                          petits (chaque étage vaut 5/7 du précédent).
+    nb_etages           : nombre de niveaux de branches triangulaires.
+    couleur_sapin       : couleur de remplissage des triangles de branches.
+    couleur_boules      : couleur des boules de décoration.
+    couleur_etoile      : couleur de l'étoile au sommet du sapin.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au bas du
+    tronc, orientée vers le haut (nord). Le dessin débute par le tronc,
+    puis les étages de branches sont construits de bas en haut.
+"""

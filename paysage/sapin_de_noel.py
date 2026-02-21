@@ -89,3 +89,21 @@ def sapin(taille):
 
 if __name__ == '__main__':
     sapin(100)
+
+"""
+sapin(taille)
+
+Dessine un sapin de Noël décoré vu de face, composé d'un tronc,
+de trois rangées de branches triangulaires (avec boules rouges),
+d'ailerons latéraux triangulaires et d'une étoile dorée au sommet.
+
+Paramètres :
+    taille : taille globale du sapin (en pixels).
+             Le tronc a une largeur de 1/5 de taille et une hauteur
+             de 2/5 de taille. Les branches sont des triangles équilatéraux
+             de côté taille. L'étoile est de côté taille/2.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche du tronc, orientée vers le haut (nord).
+"""

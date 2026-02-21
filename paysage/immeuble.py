@@ -94,3 +94,27 @@ def immeuble(nb_colonnes, nb_etages, cote, couleur_fenetres,
 
 if __name__ == '__main__':
     immeuble(5, 8, 20, 'lightBlue', 'lightGrey', 'blue', 'red', 'green')
+
+"""
+immeuble(nb_colonnes, nb_etages, cote, couleur_fenetres,
+         couleur_immeuble, couleur1, couleur2, couleur3)
+
+Dessine un immeuble vu de face, composé de colonnes de fenêtres empilées
+en étages, avec une guirlande lumineuse décorative en façade.
+
+Paramètres :
+    nb_colonnes      : nombre de colonnes de fenêtres (sections verticales).
+    nb_etages        : nombre de fenêtres par colonne (nombre d'étages).
+    cote             : côté de chaque fenêtre carrée (en pixels).
+                       Les colonnes ont une largeur de 2×cote et les
+                       hauteurs d'étage de 1.5×cote.
+    couleur_fenetres : couleur de remplissage des fenêtres.
+    couleur_immeuble : couleur de la façade et des encadrements.
+    couleur1         : première couleur des points lumineux de la guirlande.
+    couleur2         : deuxième couleur des points lumineux de la guirlande.
+    couleur3         : troisième couleur des points lumineux de la guirlande.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de l'immeuble, orientée vers le haut (nord).
+"""

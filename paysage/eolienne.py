@@ -49,5 +49,25 @@ def eolienne(hauteur, couleur_base, couleur_helice, orientation):
 if __name__ == '__main__':
     eolienne(100,'grey','lightGrey',100)
 
+"""
+eolienne(hauteur, couleur_base, couleur_helice, orientation)
 
+Dessine une éolienne vue de face, composée d'un mât légèrement incliné
+et d'un rotor à quatre pales.
 
+Paramètres :
+    hauteur        : hauteur du mât de l'éolienne (en pixels).
+                     La taille des pales (moitié de la hauteur) et la
+                     largeur de la base du mât découlent également de
+                     ce paramètre.
+    couleur_base   : couleur du mât (pylône).
+    couleur_helice : couleur des pales du rotor.
+    orientation    : angle de rotation du rotor en degrés (direction vers
+                     laquelle pointe la première pale, selon le système
+                     de cap de la tortue).
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), à la base
+    du mât, orientée vers le haut (nord). Le mât est légèrement incliné
+    (5°) vers la droite.
+"""

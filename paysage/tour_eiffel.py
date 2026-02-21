@@ -166,4 +166,30 @@ def tour_eiffel(Base, couleur_lumiere, couleur):
 
 
 if __name__ == '__main__':
-    tour_eiffel(100, 'yellow', 'grey')  
+    tour_eiffel(100, 'yellow', 'grey')
+
+"""
+tour_eiffel(Base, couleur_lumiere, couleur)
+
+Dessine la Tour Eiffel vue de face, composée d'un arc de cercle formant
+les pieds, d'un grand trapèze, d'une plateforme rectangulaire, de
+barrières inclinées, d'un second trapèze, d'un socle de flèche et d'une
+pointe, avec une lumière au sommet.
+
+Paramètres :
+    Base            : largeur de la base de la Tour Eiffel (en pixels).
+                      Toutes les hauteurs et largeurs des différentes
+                      sections (trapèzes, rectangle de plateforme,
+                      barrières, flèche) sont calculées proportionnellement
+                      à cette valeur.
+    couleur_lumiere : couleur de la lumière (point lumineux) au sommet
+                      de la tour.
+    couleur         : couleur de la structure de la tour (piliers,
+                      trapèzes, plateforme, pointe).
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au centre
+    de la base de la Tour Eiffel (entre les deux pieds), orientée vers
+    le haut (nord). Le premier élément dessiné est l'arc de cercle
+    formant les pieds de la tour.
+"""

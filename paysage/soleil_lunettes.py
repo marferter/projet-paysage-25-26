@@ -98,3 +98,28 @@ def soleil_a_lunettes(diametre, couleur_petits_rayons,
 
 if __name__ == '__main__':
     soleil_a_lunettes(100, "yellow", "gold", "darkOrange")
+
+"""
+soleil_a_lunettes(diametre, couleur_petits_rayons, couleur_grands_rayons,
+                  couleur_transition_soleil)
+
+Dessine un soleil avec des lunettes de soleil, composé de rayons
+triangulaires alternés (petits et grands) autour d'un disque central
+avec dégradé de couleur, surmonté d'une paire de lunettes.
+
+Paramètres :
+    diametre                 : diamètre du disque central du soleil
+                               (en pixels). La longueur des rayons
+                               est proportionnelle au diamètre
+                               (petits : ~2/5 + 3.5/5, grands : ~2/5 + 4.18/5).
+    couleur_petits_rayons    : couleur des rayons courts (alternés).
+    couleur_grands_rayons    : couleur des rayons longs (alternés) et
+                               du centre intérieur du soleil.
+    couleur_transition_soleil: couleur intermédiaire du dégradé au centre
+                               du soleil.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au centre
+    du soleil. Les rayons s'étendent depuis ce centre, puis la tortue
+    revient au centre pour tracer les disques concentriques et les lunettes.
+"""

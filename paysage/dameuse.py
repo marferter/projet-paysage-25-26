@@ -224,3 +224,25 @@ def dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6):
 if __name__ == '__main__':
     dessine_dameuse(100, 'green', 'blue', 'red')
 
+"""
+dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6)
+
+Dessine une dameuse (engin de damage des pistes de ski) vue de côté,
+avec sa cabine, sa vitre, son cache-moteur, sa chenille, sa fraise
+de damage, sa pelle et son gyrophare.
+
+Paramètres :
+    longueur  : longueur totale de la dameuse (en pixels).
+                C'est la dimension de référence ; toutes les autres
+                proportions (hauteur de la cabine, taille de la fraise,
+                diamètre des roues, longueur de la chenille, etc.)
+                en sont dérivées.
+    couleur_1 : couleur principale du corps de la dameuse (cabine et
+                cache-moteur).
+    couleur_2 : couleur de la vitre/pare-brise de la cabine.
+    couleur_6 : couleur du gyrophare situé sur le toit de la cabine.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la cabine, orientée vers le haut (nord).
+"""

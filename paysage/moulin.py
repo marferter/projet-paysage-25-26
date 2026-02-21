@@ -114,3 +114,27 @@ def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
 if __name__ == '__main__':
     moulin(100, 80, 'red', 'grey', 'lightBlue', 'gold', 'brown')
 
+"""
+moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
+       couleur_bat, couleur_porte)
+
+Dessine un moulin à vent vu de face, avec un bâtiment trapézoïdal,
+un toit triangulaire, une fenêtre circulaire, une porte et des ailes
+(pans) en croix.
+
+Paramètres :
+    largeur         : largeur de la base du bâtiment du moulin (en pixels).
+                      La hauteur du bâtiment (1.5×largeur) et toutes les
+                      autres dimensions en découlent.
+    angle           : orientation des ailes du moulin en degrés (angle de
+                      cap de la tortue au moment de dessiner les ailes).
+    couleur_toit    : couleur du toit triangulaire.
+    couleur_pan     : couleur des ailes/pales du moulin.
+    couleur_fenetre : couleur de la fenêtre circulaire.
+    couleur_bat     : couleur des murs du bâtiment.
+    couleur_porte   : couleur de la porte d'entrée.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la base du bâtiment, orientée vers le haut (nord).
+"""

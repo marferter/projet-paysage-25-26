@@ -59,3 +59,22 @@ def chalet(base_chalet, couleur_toit, couleur_facade,couleur_fenetre):
 if __name__ == '__main__':
     chalet(100, 'darkRed', 'olive', 'lightBlue')
 
+"""
+chalet(base_chalet, couleur_toit, couleur_facade, couleur_fenetre)
+
+Dessine un chalet de montagne vu de face, avec une façade rectangulaire,
+une fenêtre carrée, une porte en bois et un toit en demi-carré (45°).
+
+Paramètres :
+    base_chalet     : largeur de la façade du chalet (en pixels).
+                      La hauteur de la façade (3/5 de la base), la taille
+                      de la fenêtre (1/5 de la base), la taille de la porte
+                      et la base du toit (12/10 de la base) en découlent.
+    couleur_toit    : couleur du toit triangulaire.
+    couleur_facade  : couleur des murs de la façade.
+    couleur_fenetre : couleur de la fenêtre carrée.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la façade, orientée vers le haut (nord).
+"""

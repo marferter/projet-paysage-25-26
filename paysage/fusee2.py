@@ -90,4 +90,29 @@ def fusee2(taille_base, couleur_primaire, couleur_secondaire,
 if __name__ == "__main__":
     fusee2(100, 'lightGrey', 'red', 'orange', 100)
 
+"""
+fusee2(taille_base, couleur_primaire, couleur_secondaire,
+       couleur_flammes, longueur_flammes)
 
+Dessine une fusée spatiale stylisée vue de côté, composée d'un corps
+à trois sections (deux secondaires et une principale), d'un nez
+triangulaire, de flammes à la tuyère, d'ailerons triangulaires et
+d'un hublot circulaire.
+
+Paramètres :
+    taille_base        : unité de taille de base de la fusée (en pixels).
+                         La largeur du corps vaut 1.5×taille_base ; la
+                         hauteur totale du corps vaut environ 3.33×taille_base.
+                         Toutes les proportions en découlent.
+    couleur_primaire   : couleur principale du corps (section centrale
+                         et nez triangulaire).
+    couleur_secondaire : couleur secondaire du corps (sections du bas
+                         et du haut encadrant la section principale).
+    couleur_flammes    : couleur des flammes à la tuyère.
+    longueur_flammes   : longueur des flammes de la tuyère (en pixels).
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), à la base
+    de la tuyère (bas de la fusée), orientée vers le haut (nord).
+    La première section dessinée est la partie basse du corps.
+"""

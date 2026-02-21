@@ -175,3 +175,32 @@ def dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
 
 if __name__ == "__main__":
     dessine_bateau(200, 'lightgrey', 'grey', 'lightblue', 'lightgrey', 200, 'red')
+
+"""
+dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
+               couleur_fenetre, couleur_toit, couleur_base_cheminee,
+               couleur_haut_cheminee)
+
+Dessine un bateau de croisière vu de côté, composé d'une coque,
+d'une cabine avec fenêtres et hublots, d'un toit de cabine et de
+cheminées.
+
+Paramètres :
+    Gbase_bateau          : longueur totale du bateau (en pixels).
+                            C'est la dimension principale ; toutes les
+                            autres proportions (hauteur de coque, taille
+                            des hublots, dimensions de la cabine, etc.)
+                            en découlent.
+    couleur_coque         : couleur de la coque (partie inférieure du bateau).
+    couleur_cabine        : couleur des murs de la cabine (superstructure).
+    couleur_fenetre       : couleur des fenêtres de la cabine.
+    couleur_toit          : couleur du toit de la cabine.
+    couleur_base_cheminee : couleur de la partie basse des cheminées.
+    couleur_haut_cheminee : couleur de l'anneau supérieur des cheminées.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la coque, orientée vers le haut (nord).
+    Le dessin de la coque commence par un virage à droite de 90°
+    pour tracer la base du bateau vers la droite.
+"""

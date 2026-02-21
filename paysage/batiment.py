@@ -143,3 +143,25 @@ def batiment(nombre_etage, nombre_de_fenetre, couleur_porte, couleur_fenetre, co
 if __name__ == "__main__":
     batiment(4, 7, "brown", "lightblue", "grey", 1)
 
+"""
+batiment(nombre_etage, nombre_de_fenetre, couleur_porte, couleur_fenetre,
+         couleur_batiment, taille)
+
+Dessine un immeuble résidentiel vu de face, avec un rez-de-chaussée
+(porte centrale), plusieurs étages garnis de fenêtres, et un toit plat.
+
+Paramètres :
+    nombre_etage      : nombre d'étages au-dessus du rez-de-chaussée.
+    nombre_de_fenetre : nombre de fenêtres par rangée (par étage).
+    couleur_porte     : couleur de la porte d'entrée.
+    couleur_fenetre   : couleur des fenêtres.
+    couleur_batiment  : couleur de la facade du bâtiment.
+    taille            : facteur d'échelle global du bâtiment.
+                        taille=1 correspond à une fenêtre de 30 pixels de
+                        côté et un étage de 75 pixels de hauteur. Toutes
+                        les dimensions sont multipliées par ce facteur.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), en bas à gauche
+    du bâtiment, orientée vers le haut (nord).
+"""

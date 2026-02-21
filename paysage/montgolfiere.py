@@ -105,3 +105,24 @@ def montgolfiere(diametre_ballon, couleur_panier, couleur_ballon, couleur_sac):
 
 if __name__ == '__main__':
     montgolfiere(100, 'brown', 'red', 'beige')
+
+"""
+montgolfiere(diametre_ballon, couleur_panier, couleur_ballon, couleur_sac)
+
+Dessine une montgolfière vue de face, composée d'un panier rectangulaire
+(nacelle), d'un brûleur (sac), de cordages en faisceau et d'un ballon
+circulaire.
+
+Paramètres :
+    diametre_ballon : diamètre du ballon (en pixels).
+                      Le panier a une largeur de 1/4 du diamètre et les
+                      cordages une longueur de 1/3 du diamètre.
+    couleur_panier  : couleur du panier (nacelle).
+    couleur_ballon  : couleur du ballon.
+    couleur_sac     : couleur du brûleur / sac à gaz relié au ballon.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche du panier, orientée vers le haut (nord).
+    Le dessin commence par le panier, puis remonte vers le ballon.
+"""

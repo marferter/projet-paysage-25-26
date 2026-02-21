@@ -97,5 +97,23 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
 if __name__ == '__main__':
     dessiner_chateau(1, 'grey', 'black')
 
+"""
+dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue')
 
+Dessine un château médiéval vu de face, composé de deux grandes tours
+latérales avec créneaux, d'une tour centrale plus petite, de fenêtres
+triangulaires et d'une porte en arc.
 
+Paramètres :
+    taille          : facteur d'échelle global du château.
+                      taille=1 correspond à une hauteur des grandes tours
+                      de 125 pixels et une largeur de créneau de 10 pixels.
+                      Toutes les longueurs sont multipliées par ce facteur.
+    couleur_tours   : couleur des tours, murs et créneaux.
+    couleur_fenetre : couleur des fenêtres triangulaires des tours.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), à la base
+    du coin inférieur gauche de la tour gauche, orientée vers le haut
+    (nord). Le dessin débute par la montée de cette première tour.
+"""

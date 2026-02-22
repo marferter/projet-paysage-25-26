@@ -2,12 +2,13 @@ from gturtle import *
 from math import pi
 
 
-def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'):
+def chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'):
     setPenWidth(1)
     setPenColor('black')
     hideTurtle()
 
     def tour(hauteur, largeur_creneaux, nbr_creneaux):
+        penDown()
         fd(hauteur * taille)
         lt(90)
         for _ in range(nbr_creneaux):
@@ -22,11 +23,14 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
         fd(largeur_creneaux * taille)
         lt(90)
         fd(hauteur * taille)
+        penUp()
 
     def fenetre_triangle(longueur=15):
+        penDown()
         for _ in range(3):
             fd(longueur * taille)
             lt(120)
+        penUp()
 
     def fenetre_tour(nombre_de_fenetre, distance=30, couleur='lightblue'):
         for _ in range(nombre_de_fenetre):
@@ -44,15 +48,18 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
             pd()
 
     def porte_chateau(hauteur, largeur):
+        penDown()
         fd(largeur * taille)
         lt(90)
         fd(hauteur * taille)
         for _ in range(18):
             fd(largeur * pi / 36 * taille)
             rt(10)
+        penUp()
         fd(hauteur * taille)
         lt(90)
         
+
     setFillColor(couleur_tours)
     startPath()
     tour(125, 10, 3)
@@ -62,13 +69,12 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
     tour(125, 10, 3)
     fillPath()
     lt(90)
-    fd(250 * taille)
     pu()
+    fd(250 * taille)
     bk(45 * taille)
     lt(90)
     fd(30 * taille)
     rt(90)
-    pd()
     fenetre_tour(3,30,couleur_fenetre)
     lt(90)
     pu()
@@ -80,14 +86,12 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
     lt(90)
     fd(30 * taille)
     rt(90)
-    pd()
     fenetre_tour(3,30,couleur_fenetre)
     pu()
     rt(90)
     fd(120 * taille)
     lt(90)
     fd(70 * taille)
-    pd()
     setPenColor('saddlebrown')
     setFillColor('saddlebrown')
     startPath()
@@ -95,10 +99,10 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
     fillPath()
     
 if __name__ == '__main__':
-    dessiner_chateau(1, 'grey', 'black')
+    chateau(1, 'grey', 'black')
 
 """
-dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue')
+chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue')
 
 Dessine un château médiéval vu de face, composé de deux grandes tours
 latérales avec créneaux, d'une tour centrale plus petite, de fenêtres

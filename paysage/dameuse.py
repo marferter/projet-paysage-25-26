@@ -2,7 +2,7 @@ from gturtle import *
 from math import sqrt
 
 
-def dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6):
+def dameuse(longueur, couleur_1, couleur_2, couleur_6):
     setPenWidth(2)
     setPenColor('black')
     hideTurtle()
@@ -222,10 +222,10 @@ def dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6):
 
 
 if __name__ == '__main__':
-    dessine_dameuse(100, 'green', 'blue', 'red')
+    dameuse(100, 'green', 'blue', 'red')
 
 """
-dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6)
+dameuse(longueur, couleur_1, couleur_2, couleur_6)
 
 Dessine une dameuse (engin de damage des pistes de ski) vue de côté,
 avec sa cabine, sa vitre, son cache-moteur, sa chenille, sa fraise

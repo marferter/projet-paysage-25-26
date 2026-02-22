@@ -1,7 +1,7 @@
 from gturtle import *
 from math import sqrt
 
-def dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
+def bateau(Gbase_bateau, couleur_coque, couleur_cabine,
     couleur_fenetre, couleur_toit, couleur_base_cheminee, couleur_haut_cheminee
     ):
     setPenWidth(1)
@@ -174,10 +174,10 @@ def dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
     cheminee()
 
 if __name__ == "__main__":
-    dessine_bateau(200, 'lightgrey', 'grey', 'lightblue', 'lightgrey', 200, 'red')
+    bateau(200, 'lightgrey', 'grey', 'lightblue', 'lightgrey', 200, 'red')
 
 """
-dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
+bateau(Gbase_bateau, couleur_coque, couleur_cabine,
                couleur_fenetre, couleur_toit, couleur_base_cheminee,
                couleur_haut_cheminee)
 

@@ -1,6 +1,6 @@
 # Auto-generated combined module
 # Source folder: paysage
-# Generated: 2026-02-22T08:29:33.576237Z
+# Generated: 2026-02-22T09:34:26.833497Z
 # NOTE: top-level calls have been skipped. Review warnings printed during generation.
 
 # ---- imports (deduplicated) ----
@@ -52,7 +52,7 @@ Position initiale de la tortue :
 """
 
 # --- from bateau.py ---
-def dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
+def bateau(Gbase_bateau, couleur_coque, couleur_cabine,
     couleur_fenetre, couleur_toit, couleur_base_cheminee, couleur_haut_cheminee
     ):
     setPenWidth(1)
@@ -224,7 +224,7 @@ def dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
     left(90)
     cheminee()
 """
-dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
+bateau(Gbase_bateau, couleur_coque, couleur_cabine,
                couleur_fenetre, couleur_toit, couleur_base_cheminee,
                couleur_haut_cheminee)
 
@@ -492,12 +492,13 @@ Position initiale de la tortue :
 """
 
 # --- from chateau.py ---
-def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'):
+def chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'):
     setPenWidth(1)
     setPenColor('black')
     hideTurtle()
 
     def tour(hauteur, largeur_creneaux, nbr_creneaux):
+        penDown()
         fd(hauteur * taille)
         lt(90)
         for _ in range(nbr_creneaux):
@@ -512,11 +513,14 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
         fd(largeur_creneaux * taille)
         lt(90)
         fd(hauteur * taille)
+        penUp()
 
     def fenetre_triangle(longueur=15):
+        penDown()
         for _ in range(3):
             fd(longueur * taille)
             lt(120)
+        penUp()
 
     def fenetre_tour(nombre_de_fenetre, distance=30, couleur='lightblue'):
         for _ in range(nombre_de_fenetre):
@@ -534,15 +538,18 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
             pd()
 
     def porte_chateau(hauteur, largeur):
+        penDown()
         fd(largeur * taille)
         lt(90)
         fd(hauteur * taille)
         for _ in range(18):
             fd(largeur * pi / 36 * taille)
             rt(10)
+        penUp()
         fd(hauteur * taille)
         lt(90)
         
+
     setFillColor(couleur_tours)
     startPath()
     tour(125, 10, 3)
@@ -552,13 +559,12 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
     tour(125, 10, 3)
     fillPath()
     lt(90)
-    fd(250 * taille)
     pu()
+    fd(250 * taille)
     bk(45 * taille)
     lt(90)
     fd(30 * taille)
     rt(90)
-    pd()
     fenetre_tour(3,30,couleur_fenetre)
     lt(90)
     pu()
@@ -570,21 +576,19 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
     lt(90)
     fd(30 * taille)
     rt(90)
-    pd()
     fenetre_tour(3,30,couleur_fenetre)
     pu()
     rt(90)
     fd(120 * taille)
     lt(90)
     fd(70 * taille)
-    pd()
     setPenColor('saddlebrown')
     setFillColor('saddlebrown')
     startPath()
     porte_chateau(35, 20)
     fillPath()
 """
-dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue')
+chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue')
 
 Dessine un château médiéval vu de face, composé de deux grandes tours
 latérales avec créneaux, d'une tour centrale plus petite, de fenêtres
@@ -605,7 +609,7 @@ Position initiale de la tortue :
 """
 
 # --- from dameuse.py ---
-def dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6):
+def dameuse(longueur, couleur_1, couleur_2, couleur_6):
     setPenWidth(2)
     setPenColor('black')
     hideTurtle()
@@ -823,7 +827,7 @@ def dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6):
     left(4)
     gyrophare(longueur / (80 / 3), couleur_6)
 """
-dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6)
+dameuse(longueur, couleur_1, couleur_2, couleur_6)
 
 Dessine une dameuse (engin de damage des pistes de ski) vue de côté,
 avec sa cabine, sa vitre, son cache-moteur, sa chenille, sa fraise
@@ -2225,11 +2229,11 @@ Position initiale de la tortue :
 # ---- exported names ----
 __all__ = [
     'arriere_plan',
+    'bateau',
     'batiment',
     'chalet',
-    'dessine_bateau',
-    'dessine_dameuse',
-    'dessiner_chateau',
+    'chateau',
+    'dameuse',
     'eglise',
     'eolienne',
     'fusee',

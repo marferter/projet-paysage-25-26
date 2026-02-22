@@ -14,7 +14,7 @@ from math import atan, degrees, pi, sqrt
 
 # ---- collected definitions / assignments ----
 
-# --- from arriere_plan.py ---
+# --- from arriere-plan.py ---
 def arriere_plan(base,hauteur_1,hauteur_2, couleur_1, couleur_2) :
     hideTurtle()
     penDown()
@@ -1449,7 +1449,7 @@ def sapin(base_grand_triangle, nb_etages, couleur_sapin, couleur_boules, couleur
             base = base * 5 / 7
         penUp()
 
-    def etoile(base,couleur):
+    def étoile(base,couleur):
         penDown()
         setPenColor(couleur)
         fd(base / 1.5)
@@ -1470,7 +1470,7 @@ def sapin(base_grand_triangle, nb_etages, couleur_sapin, couleur_boules, couleur
         rt(90)
         fd(base / 1.5)
         base = base / 7 * 5
-    etoile(base,couleur_etoile)
+    étoile(base,couleur_etoile)
     boules(nb_etages, base)
 
 # --- from sapin_de_noel.py ---

@@ -1,6 +1,6 @@
 # Auto-generated combined module
 # Source folder: paysage
-# Generated: 2026-02-20T11:58:47.552502Z
+# Generated: 2026-02-22T08:29:33.576237Z
 # NOTE: top-level calls have been skipped. Review warnings printed during generation.
 
 # ---- imports (deduplicated) ----
@@ -30,6 +30,26 @@ def arriere_plan(base,hauteur_1,hauteur_2, couleur_1, couleur_2) :
     setPenWidth(hauteur_2)
     forward(base - hauteur_2)
     penUp()
+"""
+arriere_plan(base, hauteur_1, hauteur_2, couleur_1, couleur_2)
+
+Dessine un arrière-plan composé de deux bandes horizontales superposées,
+représentant typiquement le sol (en bas) et le ciel (en haut).
+
+Paramètres :
+    base      : largeur totale de l'arrière-plan (en pixels).
+    hauteur_1 : épaisseur de la bande inférieure (sol, mer, prairie...).
+                C'est la taille verticale de la zone basse du décor.
+    hauteur_2 : épaisseur de la bande supérieure (ciel, fond...).
+                C'est la taille verticale de la zone haute du décor.
+    couleur_1 : couleur de la bande inférieure (ex. 'SeaGreen' pour un sol).
+    couleur_2 : couleur de la bande supérieure (ex. 'LightCyan' pour le ciel).
+
+Position initiale de la tortue :
+    La tortue utilise setPos() pour se positionner directement ; son point
+    de départ correspond au bord gauche de la bande inférieure, centré
+    verticalement sur cette bande.
+"""
 
 # --- from bateau.py ---
 def dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
@@ -203,6 +223,34 @@ def dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
     forward((longueur_toit - longueur_cabine) / 2 + hauteur_toit * 2)
     left(90)
     cheminee()
+"""
+dessine_bateau(Gbase_bateau, couleur_coque, couleur_cabine,
+               couleur_fenetre, couleur_toit, couleur_base_cheminee,
+               couleur_haut_cheminee)
+
+Dessine un bateau de croisière vu de côté, composé d'une coque,
+d'une cabine avec fenêtres et hublots, d'un toit de cabine et de
+cheminées.
+
+Paramètres :
+    Gbase_bateau          : longueur totale du bateau (en pixels).
+                            C'est la dimension principale ; toutes les
+                            autres proportions (hauteur de coque, taille
+                            des hublots, dimensions de la cabine, etc.)
+                            en découlent.
+    couleur_coque         : couleur de la coque (partie inférieure du bateau).
+    couleur_cabine        : couleur des murs de la cabine (superstructure).
+    couleur_fenetre       : couleur des fenêtres de la cabine.
+    couleur_toit          : couleur du toit de la cabine.
+    couleur_base_cheminee : couleur de la partie basse des cheminées.
+    couleur_haut_cheminee : couleur de l'anneau supérieur des cheminées.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la coque, orientée vers le haut (nord).
+    Le dessin de la coque commence par un virage à droite de 90°
+    pour tracer la base du bateau vers la droite.
+"""
 
 # --- from batiment.py ---
 def batiment(nombre_etage, nombre_de_fenetre, couleur_porte, couleur_fenetre, couleur_batiment, taille):
@@ -344,6 +392,28 @@ def batiment(nombre_etage, nombre_de_fenetre, couleur_porte, couleur_fenetre, co
     rez_de_chaussee(nombre_de_fenetre, couleur_porte, hauteur)
     etage(nombre_etage, nombre_de_fenetre, couleur_fenetre, largeur_entre_fenetre, couleur_batiment, hauteur)
     toit(nombre_de_fenetre, taille_fenetre)
+"""
+batiment(nombre_etage, nombre_de_fenetre, couleur_porte, couleur_fenetre,
+         couleur_batiment, taille)
+
+Dessine un immeuble résidentiel vu de face, avec un rez-de-chaussée
+(porte centrale), plusieurs étages garnis de fenêtres, et un toit plat.
+
+Paramètres :
+    nombre_etage      : nombre d'étages au-dessus du rez-de-chaussée.
+    nombre_de_fenetre : nombre de fenêtres par rangée (par étage).
+    couleur_porte     : couleur de la porte d'entrée.
+    couleur_fenetre   : couleur des fenêtres.
+    couleur_batiment  : couleur de la facade du bâtiment.
+    taille            : facteur d'échelle global du bâtiment.
+                        taille=1 correspond à une fenêtre de 30 pixels de
+                        côté et un étage de 75 pixels de hauteur. Toutes
+                        les dimensions sont multipliées par ce facteur.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), en bas à gauche
+    du bâtiment, orientée vers le haut (nord).
+"""
 
 # --- from chalet.py ---
 def chalet(base_chalet, couleur_toit, couleur_facade,couleur_fenetre):
@@ -401,6 +471,25 @@ def chalet(base_chalet, couleur_toit, couleur_facade,couleur_fenetre):
     forward(base_chalet * 1 / 10)
     right(90)
     demi_carre(base_toit, couleur_toit)
+"""
+chalet(base_chalet, couleur_toit, couleur_facade, couleur_fenetre)
+
+Dessine un chalet de montagne vu de face, avec une façade rectangulaire,
+une fenêtre carrée, une porte en bois et un toit en demi-carré (45°).
+
+Paramètres :
+    base_chalet     : largeur de la façade du chalet (en pixels).
+                      La hauteur de la façade (3/5 de la base), la taille
+                      de la fenêtre (1/5 de la base), la taille de la porte
+                      et la base du toit (12/10 de la base) en découlent.
+    couleur_toit    : couleur du toit triangulaire.
+    couleur_facade  : couleur des murs de la façade.
+    couleur_fenetre : couleur de la fenêtre carrée.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la façade, orientée vers le haut (nord).
+"""
 
 # --- from chateau.py ---
 def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'):
@@ -494,6 +583,26 @@ def dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue'
     startPath()
     porte_chateau(35, 20)
     fillPath()
+"""
+dessiner_chateau(taille=1, couleur_tours='gray', couleur_fenetre='lightblue')
+
+Dessine un château médiéval vu de face, composé de deux grandes tours
+latérales avec créneaux, d'une tour centrale plus petite, de fenêtres
+triangulaires et d'une porte en arc.
+
+Paramètres :
+    taille          : facteur d'échelle global du château.
+                      taille=1 correspond à une hauteur des grandes tours
+                      de 125 pixels et une largeur de créneau de 10 pixels.
+                      Toutes les longueurs sont multipliées par ce facteur.
+    couleur_tours   : couleur des tours, murs et créneaux.
+    couleur_fenetre : couleur des fenêtres triangulaires des tours.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), à la base
+    du coin inférieur gauche de la tour gauche, orientée vers le haut
+    (nord). Le dessin débute par la montée de cette première tour.
+"""
 
 # --- from dameuse.py ---
 def dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6):
@@ -713,6 +822,28 @@ def dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6):
     deplacement_5(longueur / (80 / 49), longueur / 4)
     left(4)
     gyrophare(longueur / (80 / 3), couleur_6)
+"""
+dessine_dameuse(longueur, couleur_1, couleur_2, couleur_6)
+
+Dessine une dameuse (engin de damage des pistes de ski) vue de côté,
+avec sa cabine, sa vitre, son cache-moteur, sa chenille, sa fraise
+de damage, sa pelle et son gyrophare.
+
+Paramètres :
+    longueur  : longueur totale de la dameuse (en pixels).
+                C'est la dimension de référence ; toutes les autres
+                proportions (hauteur de la cabine, taille de la fraise,
+                diamètre des roues, longueur de la chenille, etc.)
+                en sont dérivées.
+    couleur_1 : couleur principale du corps de la dameuse (cabine et
+                cache-moteur).
+    couleur_2 : couleur de la vitre/pare-brise de la cabine.
+    couleur_6 : couleur du gyrophare situé sur le toit de la cabine.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la cabine, orientée vers le haut (nord).
+"""
 
 # --- from eglise.py ---
 def eglise(largeur, couleur_nef, couleur_clocher, couleur_toit, couleur_horloge="white"):
@@ -797,6 +928,29 @@ def eglise(largeur, couleur_nef, couleur_clocher, couleur_toit, couleur_horloge=
     forward(1 / 2 * base_clocher)
     setPenColor(couleur_horloge)
     dot(2 / 5 * base_clocher)
+"""
+eglise(largeur, couleur_nef, couleur_clocher, couleur_toit,
+       couleur_horloge='white')
+
+Dessine une église vue de face, composée d'une nef rectangulaire avec
+son toit triangulaire, d'un clocher surmonté d'une flèche et d'une
+horloge circulaire.
+
+Paramètres :
+    largeur         : largeur totale de l'église (en pixels).
+                      La hauteur de la nef (3/8 de la largeur), la base
+                      de la nef (3/4 de la largeur), la hauteur du clocher
+                      (3/4 de la largeur) et toutes les autres dimensions
+                      en découlent.
+    couleur_nef     : couleur des murs de la nef (corps principal).
+    couleur_clocher : couleur des murs du clocher (tour).
+    couleur_toit    : couleur du toit de la nef et de la flèche du clocher.
+    couleur_horloge : couleur de l'horloge sur le clocher (blanc par défaut).
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la nef, orientée vers le haut (nord).
+"""
 
 # --- from eolienne.py ---
 def eolienne(hauteur, couleur_base, couleur_helice, orientation):
@@ -842,6 +996,28 @@ def eolienne(hauteur, couleur_base, couleur_helice, orientation):
     forward(longueur_grand_cote)
     helice(hauteur / 2, couleur_helice, orientation)
     setHeading(0)
+"""
+eolienne(hauteur, couleur_base, couleur_helice, orientation)
+
+Dessine une éolienne vue de face, composée d'un mât légèrement incliné
+et d'un rotor à quatre pales.
+
+Paramètres :
+    hauteur        : hauteur du mât de l'éolienne (en pixels).
+                     La taille des pales (moitié de la hauteur) et la
+                     largeur de la base du mât découlent également de
+                     ce paramètre.
+    couleur_base   : couleur du mât (pylône).
+    couleur_helice : couleur des pales du rotor.
+    orientation    : angle de rotation du rotor en degrés (direction vers
+                     laquelle pointe la première pale, selon le système
+                     de cap de la tortue).
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), à la base
+    du mât, orientée vers le haut (nord). Le mât est légèrement incliné
+    (5°) vers la droite.
+"""
 
 # --- from fusee.py ---
 def fusee(taille, couleur_base, couleur_aile, rapport_feu, couleur_feu):
@@ -963,6 +1139,31 @@ def fusee(taille, couleur_base, couleur_aile, rapport_feu, couleur_feu):
     right(90)
     forward(largeur_rectangle)
     fenetre(diametre_fenetre, 'white')
+"""
+fusee(taille, couleur_base, couleur_aile, rapport_feu, couleur_feu)
+
+Dessine une fusée spatiale vue de côté, composée d'un corps trapézoïdal,
+d'un corps rectangulaire bleu (avec hublot), d'ailerons triangulaires
+et d'un panache de feu à la tuyère.
+
+Paramètres :
+    taille       : unité de taille de base de la fusée (en pixels).
+                   La grande base du trapèze inférieur vaut 4×taille,
+                   le corps rectangulaire fait 2×taille de large et
+                   ~3.33×taille de long. Toutes les dimensions en découlent.
+    couleur_base : couleur principale du corps de la fusée
+                   (trapèzes supérieur et inférieur).
+    couleur_aile : couleur des ailerons/empennages.
+    rapport_feu  : longueur du panache de feu en multiples de taille
+                   (ex. rapport_feu=1 → longueur_feu = 1×taille).
+    couleur_feu  : couleur du panache de feu à la tuyère.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), à la tuyère
+    (bas) de la fusée, orientée vers le haut (nord). Le premier élément
+    dessiné est le panache de feu vers le bas, puis la fusée est construite
+    de bas en haut.
+"""
 
 # --- from fusee2.py ---
 def fusee2(taille_base, couleur_primaire, couleur_secondaire,
@@ -1051,6 +1252,32 @@ def fusee2(taille_base, couleur_primaire, couleur_secondaire,
     setPenColor('black')
     bk(taille_base)
     rt(90)
+"""
+fusee2(taille_base, couleur_primaire, couleur_secondaire,
+       couleur_flammes, longueur_flammes)
+
+Dessine une fusée spatiale stylisée vue de côté, composée d'un corps
+à trois sections (deux secondaires et une principale), d'un nez
+triangulaire, de flammes à la tuyère, d'ailerons triangulaires et
+d'un hublot circulaire.
+
+Paramètres :
+    taille_base        : unité de taille de base de la fusée (en pixels).
+                         La largeur du corps vaut 1.5×taille_base ; la
+                         hauteur totale du corps vaut environ 3.33×taille_base.
+                         Toutes les proportions en découlent.
+    couleur_primaire   : couleur principale du corps (section centrale
+                         et nez triangulaire).
+    couleur_secondaire : couleur secondaire du corps (sections du bas
+                         et du haut encadrant la section principale).
+    couleur_flammes    : couleur des flammes à la tuyère.
+    longueur_flammes   : longueur des flammes de la tuyère (en pixels).
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), à la base
+    de la tuyère (bas de la fusée), orientée vers le haut (nord).
+    La première section dessinée est la partie basse du corps.
+"""
 
 # --- from immeuble.py ---
 def immeuble(nb_colonnes, nb_etages, cote, couleur_fenetres,
@@ -1143,6 +1370,29 @@ def immeuble(nb_colonnes, nb_etages, cote, couleur_fenetres,
     right(90)
     guirlande(couleur1, couleur2, couleur3, cote, nb_colonnes)
     penUp()
+"""
+immeuble(nb_colonnes, nb_etages, cote, couleur_fenetres,
+         couleur_immeuble, couleur1, couleur2, couleur3)
+
+Dessine un immeuble vu de face, composé de colonnes de fenêtres empilées
+en étages, avec une guirlande lumineuse décorative en façade.
+
+Paramètres :
+    nb_colonnes      : nombre de colonnes de fenêtres (sections verticales).
+    nb_etages        : nombre de fenêtres par colonne (nombre d'étages).
+    cote             : côté de chaque fenêtre carrée (en pixels).
+                       Les colonnes ont une largeur de 2×cote et les
+                       hauteurs d'étage de 1.5×cote.
+    couleur_fenetres : couleur de remplissage des fenêtres.
+    couleur_immeuble : couleur de la façade et des encadrements.
+    couleur1         : première couleur des points lumineux de la guirlande.
+    couleur2         : deuxième couleur des points lumineux de la guirlande.
+    couleur3         : troisième couleur des points lumineux de la guirlande.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de l'immeuble, orientée vers le haut (nord).
+"""
 
 # --- from montgolfiere.py ---
 def montgolfiere(diametre_ballon, couleur_panier, couleur_ballon, couleur_sac):
@@ -1246,6 +1496,26 @@ def montgolfiere(diametre_ballon, couleur_panier, couleur_ballon, couleur_sac):
     forward(longueur_corde * 0.9063 * 2)
     setPenColor(couleur_ballon)
     dot(diametre_ballon)
+"""
+montgolfiere(diametre_ballon, couleur_panier, couleur_ballon, couleur_sac)
+
+Dessine une montgolfière vue de face, composée d'un panier rectangulaire
+(nacelle), d'un brûleur (sac), de cordages en faisceau et d'un ballon
+circulaire.
+
+Paramètres :
+    diametre_ballon : diamètre du ballon (en pixels).
+                      Le panier a une largeur de 1/4 du diamètre et les
+                      cordages une longueur de 1/3 du diamètre.
+    couleur_panier  : couleur du panier (nacelle).
+    couleur_ballon  : couleur du ballon.
+    couleur_sac     : couleur du brûleur / sac à gaz relié au ballon.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche du panier, orientée vers le haut (nord).
+    Le dessin commence par le panier, puis remonte vers le ballon.
+"""
 
 # --- from moulin.py ---
 def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
@@ -1356,6 +1626,30 @@ def moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
     setHeading(angle)
     longueur_pan = largeur * 0.8
     pan(couleur_pan,longueur_pan)
+"""
+moulin(largeur, angle, couleur_toit, couleur_pan, couleur_fenetre,
+       couleur_bat, couleur_porte)
+
+Dessine un moulin à vent vu de face, avec un bâtiment trapézoïdal,
+un toit triangulaire, une fenêtre circulaire, une porte et des ailes
+(pans) en croix.
+
+Paramètres :
+    largeur         : largeur de la base du bâtiment du moulin (en pixels).
+                      La hauteur du bâtiment (1.5×largeur) et toutes les
+                      autres dimensions en découlent.
+    angle           : orientation des ailes du moulin en degrés (angle de
+                      cap de la tortue au moment de dessiner les ailes).
+    couleur_toit    : couleur du toit triangulaire.
+    couleur_pan     : couleur des ailes/pales du moulin.
+    couleur_fenetre : couleur de la fenêtre circulaire.
+    couleur_bat     : couleur des murs du bâtiment.
+    couleur_porte   : couleur de la porte d'entrée.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche de la base du bâtiment, orientée vers le haut (nord).
+"""
 
 # --- from nuage.py ---
 def nuage(taille, couleur):
@@ -1377,6 +1671,23 @@ def nuage(taille, couleur):
     left(100)
     forward(rayon * 1.1)
     dot(taille * 0.6)
+"""
+nuage(taille, couleur)
+
+Dessine un nuage composé de plusieurs disques (cercles pleins) de
+tailles décroissantes disposés autour d'un disque central.
+
+Paramètres :
+    taille  : diamètre du disque central du nuage (en pixels).
+              Les disques satellites ont des diamètres proportionnels
+              au disque central (0.7×taille, 0.6×taille, 0.4×taille).
+    couleur : couleur du nuage (tous les disques ont la même couleur).
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au centre
+    du disque principal du nuage. Le premier cercle est tracé à cet
+    endroit, puis la tortue se déplace pour tracer les cercles satellites.
+"""
 
 # --- from sapin.py ---
 def sapin(base_grand_triangle, nb_etages, couleur_sapin, couleur_boules, couleur_etoile):
@@ -1472,6 +1783,30 @@ def sapin(base_grand_triangle, nb_etages, couleur_sapin, couleur_boules, couleur
         base = base / 7 * 5
     étoile(base,couleur_etoile)
     boules(nb_etages, base)
+"""
+sapin(base_grand_triangle, nb_etages, couleur_sapin, couleur_boules,
+      couleur_etoile)
+
+Dessine un sapin décoré vu de face, composé d'un tronc, de plusieurs
+niveaux de triangles (étages de branches), de boules de décoration et
+d'une étoile au sommet.
+
+Paramètres :
+    base_grand_triangle : largeur de la base du plus grand triangle
+                          (étage inférieur) du sapin (en pixels).
+                          C'est la dimension de référence ; les triangles
+                          des étages supérieurs sont progressivement plus
+                          petits (chaque étage vaut 5/7 du précédent).
+    nb_etages           : nombre de niveaux de branches triangulaires.
+    couleur_sapin       : couleur de remplissage des triangles de branches.
+    couleur_boules      : couleur des boules de décoration.
+    couleur_etoile      : couleur de l'étoile au sommet du sapin.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au bas du
+    tronc, orientée vers le haut (nord). Le dessin débute par le tronc,
+    puis les étages de branches sont construits de bas en haut.
+"""
 
 # --- from sapin_de_noel.py ---
 def sapin(taille):
@@ -1560,6 +1895,23 @@ def sapin(taille):
     right(30)
     penUp()
     back(taille / 5)
+"""
+sapin(taille)
+
+Dessine un sapin de Noël décoré vu de face, composé d'un tronc,
+de trois rangées de branches triangulaires (avec boules rouges),
+d'ailerons latéraux triangulaires et d'une étoile dorée au sommet.
+
+Paramètres :
+    taille : taille globale du sapin (en pixels).
+             Le tronc a une largeur de 1/5 de taille et une hauteur
+             de 2/5 de taille. Les branches sont des triangles équilatéraux
+             de côté taille. L'étoile est de côté taille/2.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au coin
+    inférieur gauche du tronc, orientée vers le haut (nord).
+"""
 
 # --- from soleil_lunettes.py ---
 def soleil_a_lunettes(diametre, couleur_petits_rayons,
@@ -1656,6 +2008,30 @@ def soleil_a_lunettes(diametre, couleur_petits_rayons,
     forward(diametre / 2)
     right(angle_placement)
     lunettes(diametre * 3 / 10, 'black', diametre * 1 / 20)
+"""
+soleil_a_lunettes(diametre, couleur_petits_rayons, couleur_grands_rayons,
+                  couleur_transition_soleil)
+
+Dessine un soleil avec des lunettes de soleil, composé de rayons
+triangulaires alternés (petits et grands) autour d'un disque central
+avec dégradé de couleur, surmonté d'une paire de lunettes.
+
+Paramètres :
+    diametre                 : diamètre du disque central du soleil
+                               (en pixels). La longueur des rayons
+                               est proportionnelle au diamètre
+                               (petits : ~2/5 + 3.5/5, grands : ~2/5 + 4.18/5).
+    couleur_petits_rayons    : couleur des rayons courts (alternés).
+    couleur_grands_rayons    : couleur des rayons longs (alternés) et
+                               du centre intérieur du soleil.
+    couleur_transition_soleil: couleur intermédiaire du dégradé au centre
+                               du soleil.
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au centre
+    du soleil. Les rayons s'étendent depuis ce centre, puis la tortue
+    revient au centre pour tracer les disques concentriques et les lunettes.
+"""
 
 # --- from tour_eiffel.py ---
 def tour_eiffel(Base, couleur_lumiere, couleur):
@@ -1820,6 +2196,31 @@ def tour_eiffel(Base, couleur_lumiere, couleur):
     socle_pointe(Base, couleur)
     pointe(Base, couleur)
     lumiere(couleur_lumiere, Base)
+"""
+tour_eiffel(Base, couleur_lumiere, couleur)
+
+Dessine la Tour Eiffel vue de face, composée d'un arc de cercle formant
+les pieds, d'un grand trapèze, d'une plateforme rectangulaire, de
+barrières inclinées, d'un second trapèze, d'un socle de flèche et d'une
+pointe, avec une lumière au sommet.
+
+Paramètres :
+    Base            : largeur de la base de la Tour Eiffel (en pixels).
+                      Toutes les hauteurs et largeurs des différentes
+                      sections (trapèzes, rectangle de plateforme,
+                      barrières, flèche) sont calculées proportionnellement
+                      à cette valeur.
+    couleur_lumiere : couleur de la lumière (point lumineux) au sommet
+                      de la tour.
+    couleur         : couleur de la structure de la tour (piliers,
+                      trapèzes, plateforme, pointe).
+
+Position initiale de la tortue :
+    La tortue part depuis la position par défaut (origine), au centre
+    de la base de la Tour Eiffel (entre les deux pieds), orientée vers
+    le haut (nord). Le premier élément dessiné est l'arc de cercle
+    formant les pieds de la tour.
+"""
 
 # ---- exported names ----
 __all__ = [

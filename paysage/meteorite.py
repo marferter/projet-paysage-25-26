@@ -1,7 +1,7 @@
 from gturtle import *
 from math import pi, atan, degrees, sin
 
-def final_meteorite(diametre_meteorite, couleurflamme_ext, couleurflamme_int):
+def meteorite(diametre_meteorite, couleurflamme_ext, couleurflamme_int):
     setPenWidth(1)
     setPenColor('black')
     hideTurtle()
@@ -69,7 +69,7 @@ def final_meteorite(diametre_meteorite, couleurflamme_ext, couleurflamme_int):
 
         forward(diametre / 2 - base_flamme_droite)
         
-    def meteorite(diametre_meteorite,couleur_ext):
+    def centre_meteorite(diametre_meteorite,couleur_ext):
         setPenColor(couleur_ext)
         dot(diametre_meteorite * 1.15)
         setPenColor('black')
@@ -85,7 +85,7 @@ def final_meteorite(diametre_meteorite, couleurflamme_ext, couleurflamme_int):
     flammes(diametre_petites_flammes,couleurflamme_int)
     right(90)
     forward(diametre_meteorite * 0.03)
-    meteorite(diametre_meteorite,couleurflamme_ext)
+    centre_meteorite(diametre_meteorite,couleurflamme_ext)
     #crateres
     setPenColor("black")
     left(30)
@@ -104,4 +104,66 @@ def final_meteorite(diametre_meteorite, couleurflamme_ext, couleurflamme_int):
     
 
 if __name__ == '__main__':
-    final_meteorite(150, 'firebrick1', 'darkOrange')
+    meteorite(150, 'firebrick1', 'darkOrange')
+
+'''
+Météorite enflammée (gturtle)
+
+Ce script définit une fonction `meteorite` qui dessine, avec la bibliothèque
+`gturtle`, une météorite entourée de flammes (deux couches de flammes : externe
+puis interne) ainsi que quelques cratères (points) sur la météorite. Le dessin
+repose sur des arcs de cercle approximés par de petits segments et sur des
+triangles isocèles (pour les flammes) calculés à l’aide de trigonométrie.
+
+Paramètres
+----------
+diametre_meteorite : float | int
+    Diamètre (en pixels) du disque principal de la météorite (le point gris
+    final dans ce code). Ce paramètre sert aussi d’échelle globale : les
+    diamètres des couches, les hauteurs/bases des flammes et le placement des
+    cratères sont proportionnels à cette valeur.
+couleurflamme_ext : str
+    Couleur utilisée pour la couche de flammes externe (remplissage) et aussi
+    comme couleur du disque externe de la météorite (premier `dot` de taille
+    `diametre_meteorite * 1.15` dans ce code). La chaîne doit être reconnue par
+    `gturtle` (nom de couleur ou spécification acceptée par l��environnement).
+couleurflamme_int : str
+    Couleur utilisée pour la couche de flammes interne (remplissage). La chaîne
+    doit être reconnue par `gturtle`.
+
+Notes
+-----
+- Le rendu dépend de l’état initial de la tortue (position et orientation) au
+  moment de l’appel : la fonction ne se repositionne pas à une origine absolue.
+- Les flammes sont construites à partir d’un demi-disque rempli et de trois
+  triangles remplis (flamme centrale + gauche + droite). Les triangles sont
+  tracés via des rotations/avancées basées sur :
+  - `alpha = atan(hauteur / (base/2))` (angle au sommet par rapport à l’axe),
+  - `hyp = hauteur / sin(alpha)` (longueur des côtés).
+- L’arc de cercle est approximé en `n = 36` pas (constant dans ce code) ; plus
+  `n` est grand, plus l’arc est lisse, mais plus il y a de segments.
+
+Valeurs limites et mises en garde
+---------------------------------
+- `diametre_meteorite` doit être strictement positif (`diametre_meteorite > 0`).
+  - Si `diametre_meteorite == 0`, tous les déplacements et points sont nuls et
+    certaines constructions deviennent dégénérées (dessin invisible ou réduit).
+  - Si `diametre_meteorite < 0`, les tailles passées à `dot()` et les distances
+    de déplacement deviennent incohérentes (selon `gturtle`, cela peut ne rien
+    dessiner, produire un comportement inattendu, ou inverser des déplacements).
+- Trigonométrie dans le calcul des flammes :
+  - `demi_base = base / 2` : dans ce code `base` est dérivé de `diametre`, donc
+    attendu strictement positif. Si `base == 0`, alors `atan(hauteur / demi_base)`
+    provoque une division par zéro.
+  - `alpha = atan(hauteur / demi_base)` puis `hyp = hauteur / sin(alpha)` :
+    si `hauteur == 0`, alors `alpha == 0` et `sin(alpha) == 0`, donc division par
+    zéro. En pratique, il faut `hauteur > 0` et `base > 0` pour éviter `sin(alpha)=0`.
+- Couleurs :
+  - Si `couleurflamme_ext` ou `couleurflamme_int` n’est pas reconnue par `gturtle`,
+    l’appel à `setPenColor` / `setFillColor` peut échouer (erreur) ou retomber sur
+    une couleur par défaut selon l’implémentation ; le rendu sera alors incorrect.
+- Approximation de l’arc :
+  - L’arc utilise `int(angle / 360 * n) + 1` itérations. Si `angle` était nul ou
+    très petit (ici il est fixé à 180 dans ce code), l’arc se réduit à peu de
+    segments et la forme peut être anguleuse.
+'''

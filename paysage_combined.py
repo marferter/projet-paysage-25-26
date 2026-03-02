@@ -1,6 +1,6 @@
 # Auto-generated combined module
 # Source folder: paysage
-# Generated: 2026-02-26T16:27:06.273304Z
+# Generated: 2026-03-02T10:43:00.084475Z
 # NOTE: top-level calls have been skipped. Review warnings printed during generation.
 
 # ---- imports (deduplicated) ----
@@ -16,7 +16,7 @@ from math import atan, degrees, pi, sqrt
 
 # ---- collected definitions / assignments ----
 
-# --- from arriere-plan.py ---
+# --- from arriere_plan.py ---
 def arriere_plan(base,hauteur_1,hauteur_2, couleur_1, couleur_2) :
     hideTurtle()
     penDown()
@@ -2044,7 +2044,7 @@ Position initiale de la tortue :
 """
 
 # --- from sapin_de_noel.py ---
-def sapin(taille):
+def sapin_de_noel(taille):
     setPenWidth(2)
     setPenColor('black')
     hideTurtle()
@@ -2131,7 +2131,7 @@ def sapin(taille):
     penUp()
     back(taille / 5)
 """
-sapin(taille)
+sapin_de_noel(taille)
 
 Dessine un sapin de Noël décoré vu de face, composé d'un tronc,
 de trois rangées de branches triangulaires (avec boules rouges),
@@ -2148,7 +2148,7 @@ Position initiale de la tortue :
     inférieur gauche du tronc, orientée vers le haut (nord).
 """
 
-# --- from soleil_lunettes.py ---
+# --- from soleil_a_lunettes.py ---
 def soleil_a_lunettes(diametre, couleur_petits_rayons,
     couleur_grands_rayons, couleur_transition_soleil):
     setPenWidth(1)
@@ -2476,6 +2476,7 @@ __all__ = [
     'moulin',
     'nuage',
     'sapin',
+    'sapin_de_noel',
     'soleil_a_lunettes',
     'tour_eiffel',
 ]

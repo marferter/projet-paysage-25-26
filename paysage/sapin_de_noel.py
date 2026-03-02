@@ -1,6 +1,6 @@
 from gturtle import *
 
-def sapin(taille):
+def sapin_de_noel(taille):
     setPenWidth(2)
     setPenColor('black')
     hideTurtle()
@@ -88,10 +88,10 @@ def sapin(taille):
     back(taille / 5)
 
 if __name__ == '__main__':
-    sapin(100)
+    sapin_de_noel(100)
 
 """
-sapin(taille)
+sapin_de_noel(taille)
 
 Dessine un sapin de Noël décoré vu de face, composé d'un tronc,
 de trois rangées de branches triangulaires (avec boules rouges),

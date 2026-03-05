@@ -45,7 +45,7 @@ def alien(couleur, taille, phase_bras):
         penUp()
         forward(taille / 3.2)
         penDown()
-        setPenWidth(taille / 12)
+        setPenWidth(taille // 12)
         forward(taille / 4.5)
         dot(taille / 8)
         penUp()

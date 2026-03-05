@@ -1449,7 +1449,7 @@ def sapin(base_grand_triangle, nb_etages, couleur_sapin, couleur_boules, couleur
             base = base * 5 / 7
         penUp()
 
-    def étoile(base,couleur):
+    def etoile(base,couleur):
         penDown()
         setPenColor(couleur)
         fd(base / 1.5)
@@ -1470,7 +1470,7 @@ def sapin(base_grand_triangle, nb_etages, couleur_sapin, couleur_boules, couleur
         rt(90)
         fd(base / 1.5)
         base = base / 7 * 5
-    étoile(base,couleur_etoile)
+    etoile(base,couleur_etoile)
     boules(nb_etages, base)
 
 # --- from sapin_de_noel.py ---
